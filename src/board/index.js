@@ -5,7 +5,6 @@ import Square from "../square";
 function Board() {
   const [grid, setgrid] = useState(Array(9).fill(null));
   const [isNext, setisNext] = useState(true);
-  console.log(grid);
 
   function handleClick(index) {
     if (calculateWinner(grid) || grid[index]) {
@@ -44,7 +43,12 @@ function Board() {
       <h1> Next player: {isNext ? "X" : "O"} </h1>
       <div class="board-container">
         {grid.map((grid, index) => (
-          <Square index={index} onHandle={handleClick} text={grid} />
+          <Square
+            key={index}
+            index={index}
+            onHandle={handleClick}
+            text={grid}
+          />
         ))}
       </div>
       <h2> Winner is {calculateWinner(grid)}</h2>

@@ -9,6 +9,7 @@ function Square(props) {
 
   return (
     <button
+      id={index}
       onClick={() => {
         onHandle(index);
       }}
