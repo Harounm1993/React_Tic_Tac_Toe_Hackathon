@@ -1,6 +1,12 @@
-import React from "react"
+import React, {useState} from "react"
 
-import Square from "../square"
+import Board from "../board"
 
 
+function Game (){
+    return <Board />
 
+}
+
+
+export default Game;
