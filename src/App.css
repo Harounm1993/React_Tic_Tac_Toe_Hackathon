@@ -37,8 +37,17 @@
   }
 }
 
-.button {
-  color: white;
-  padding: 15px 32px;
-  font-size: 16px;
+.board-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 155px;
+  background-color: white;
+  margin: auto;
+}
+
+button {
+  background-color: white;
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
 }

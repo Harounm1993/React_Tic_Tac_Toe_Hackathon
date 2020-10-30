@@ -8,15 +8,15 @@ function Board() {
   console.log(grid);
 
   function handleClick(index) {
+    if (calculateWinner(grid) || grid[index]) {
+      return;
+    }
     setgrid([
       ...grid.slice(0, index),
       isNext ? "X" : "O",
       ...grid.slice(index + 1),
     ]);
     setisNext(!isNext);
-    if (calculateWinner(grid) || grid[index]) {
-      return;
-    }
   }
 
   function calculateWinner(grid) {
@@ -33,7 +33,6 @@ function Board() {
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (grid[a] && grid[a] === grid[b] && grid[a] === grid[c]) {
-        console.log(`winner is ${grid[a]}`);
         return grid[a];
       }
     }
@@ -43,9 +42,11 @@ function Board() {
   return (
     <div>
       <h1> Next player: {isNext ? "X" : "O"} </h1>
-      {grid.map((grid, index) => (
-        <Square index={index} onHandle={handleClick} text={grid} />
-      ))}
+      <div class="board-container">
+        {grid.map((grid, index) => (
+          <Square index={index} onHandle={handleClick} text={grid} />
+        ))}
+      </div>
       <h2> Winner is {calculateWinner(grid)}</h2>
     </div>
   );
