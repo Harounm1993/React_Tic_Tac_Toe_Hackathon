@@ -41,7 +41,7 @@ function Board() {
   return (
     <div>
       <h1> Next player: {isNext ? "X" : "O"} </h1>
-      <div class="board-container">
+      <div className="board-container">
         {grid.map((grid, index) => (
           <Square
             key={index}
