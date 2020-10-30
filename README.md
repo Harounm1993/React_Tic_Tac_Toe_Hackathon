@@ -9,3 +9,20 @@ To have stateful components in react before hooks were invented you had to write
 Your task today is to apply what you've learnt about react whilst following [this tutorial](https://reactjs.org/tutorial/tutorial.html). Extract what you need and use your knowledge of modern react to inform how you write your components.
 
 Happy hacking!
+
+
+// components
+
+app:
+    render board
+
+board:
+    render 9 squares/ pass down prop of index
+    will be an array
+
+
+square:
+    button: with index/onClick function 
+    if you click square= alert
+
+    player?/
